@@ -1,0 +1,34 @@
+LoadPlugin logfile
+
+<Plugin logfile>
+	LogLevel info
+	File STDOUT
+	Timestamp true
+	PrintSeverity false
+</Plugin>
+
+LoadPlugin virt
+LoadPlugin write_log
+
+<Plugin virt>
+#	Connection "xen:///"
+#	RefreshInterval 60
+#	Domain "name"
+#	ReportBlockDevices true
+#	ReportNetworkInterfaces true
+#	BlockDevice "name:device"
+#	BlockDeviceFormat target
+#	BlockDeviceFormatBasename false
+#	InterfaceDevice "name:device"
+#	IgnoreSelected false
+#	HostnameFormat name
+#	HostnameMetadataXPath "/instance/name/text()"
+#	HostnameMetadataNS "http://openstack.org/xmlns/libvirt/nova/1.0"
+#	InterfaceFormat name
+#	PluginInstanceFormat name
+#	Instances 1
+#	ExtraStats "cpu_util disk disk_err domain_state fs_info job_stats_background pcpu perf vcpu vcpupin disk_physical disk_allocation disk_capacity memory"
+	ExtraStats "memory"
+#	PersistentNotification false
+</Plugin>
+
